@@ -1,3 +1,35 @@
+/*
+Let us assume the following formula for displacement s as a function of time t,acceleration a, initial velocity vo, and initial displacement so.
+s = 1/2 a t^2 + v0 t + s0
+This program first prompts the user to enter values for acceleration,
+initial velocity, and initial displacement.
+Then it prompts the user to enter a value for time and computes
+the displacement after the entered time.
+We define and use a function called GenDisplaceFn() which takes three float64
+arguments:
+  acceleration a,
+  initial velocity v0,
+  initial displacement s0.
+GenDisplaceFn() returns a function which computes displacement as
+a function of time, assuming the given values acceleration, initial velocity,
+and initial displacement.
+The function returned by GenDisplaceFn() takes one float64 argument t, r
+epresenting time, and return one float64 argument which is the displacement
+travelled after time t.
+Example:
+assume the following initial values:
+  acceleration: a = 10,
+  initial velocity: v0 = 2,
+  initial displacement: s0 = 1.
+The following statement can be used to call GenDisplaceFn()
+to generate a function fn which will compute displacement as a function of time.
+  fn := GenDisplaceFn(10, 2, 1)
+Then to print the displacement after 3 seconds.
+  fmt.Println(fn(3))
+And hence the following statement to print the displacement after 5 seconds.
+  fmt.Println(fn(5))
+*/
+
 package main
 
 import (
